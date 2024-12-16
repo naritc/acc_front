@@ -11,11 +11,10 @@ import { MatIcon } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: 'app-ui-table',
-  standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatPaginatorModule, MatTableModule, UiInputComponent, MatIcon, MatCardModule, MatSortModule],
-  templateUrl: './ui-table.component.html',
-  styleUrl: './ui-table.component.scss'
+    selector: 'app-ui-table',
+    imports: [CommonModule, FormsModule, ReactiveFormsModule, MatPaginatorModule, MatTableModule, UiInputComponent, MatIcon, MatCardModule, MatSortModule],
+    templateUrl: './ui-table.component.html',
+    styleUrl: './ui-table.component.scss'
 })
 export class UiTableComponent implements OnInit {
   @Input() tableMeta!: TableMeta;

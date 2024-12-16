@@ -19,21 +19,20 @@ const MONITOR_VIEW = 'screen and (min-width: 1024px)';
 
 
 @Component({
-  selector: 'app-full',
-  standalone: true,
-  imports: [
-    RouterModule,
-    AppNavItemComponent,
-    MaterialModule,
-    CommonModule,
-    SidebarComponent,
-    NgScrollbarModule,
-    HeaderComponent,
-    BreadcrumbComponent
-],
-  templateUrl: './full.component.html',
-  styleUrls: [],
-  encapsulation: ViewEncapsulation.None,
+    selector: 'app-full',
+    imports: [
+        RouterModule,
+        AppNavItemComponent,
+        MaterialModule,
+        CommonModule,
+        SidebarComponent,
+        NgScrollbarModule,
+        HeaderComponent,
+        BreadcrumbComponent
+    ],
+    templateUrl: './full.component.html',
+    styleUrls: [],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class FullComponent  {
