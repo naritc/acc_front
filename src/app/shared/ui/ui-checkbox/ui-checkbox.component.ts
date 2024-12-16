@@ -3,10 +3,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MODE } from '../../constant/Mode';
 
 @Component({
-    selector: 'app-ui-checkbox',
-    imports: [MatCheckboxModule],
-    templateUrl: './ui-checkbox.component.html',
-    styleUrl: './ui-checkbox.component.scss'
+  selector: 'app-ui-checkbox',
+  standalone: true,
+  imports: [MatCheckboxModule],
+  templateUrl: './ui-checkbox.component.html',
+  styleUrl: './ui-checkbox.component.scss'
 })
 export class UiCheckboxComponent {
   @Input() lbl!: string;

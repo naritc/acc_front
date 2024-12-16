@@ -6,10 +6,11 @@ import { NavItem } from '../sidebar/nav-item/nav-item';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-    selector: 'app-breadcrumb',
-    imports: [CommonModule, RouterModule, MatButtonModule],
-    templateUrl: './breadcrumb.component.html',
-    styleUrl: './breadcrumb.component.scss'
+  selector: 'app-breadcrumb',
+  standalone: true,
+  imports: [CommonModule, RouterModule, MatButtonModule],
+  templateUrl: './breadcrumb.component.html',
+  styleUrl: './breadcrumb.component.scss'
 })
 export class BreadcrumbComponent {
   breadcrumbs$;

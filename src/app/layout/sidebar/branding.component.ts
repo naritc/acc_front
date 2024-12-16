@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-branding',
-    imports: [RouterModule],
-    template: `
+  selector: 'app-branding',
+  standalone: true,
+  imports: [RouterModule],
+  template: `
     <div class="branding d-flex flex-row">
       <a [routerLink]="['/']" class="d-flex align-items-center">
         <img
@@ -16,7 +17,7 @@ import { RouterModule } from '@angular/router';
       </a>
       <h1 class="mat-h1 d-flex align-items-center m-l-20" style="color: #fafafa">Account</h1>
     </div>
-  `
+  `,
 })
 export class BrandingComponent {
 }

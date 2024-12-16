@@ -7,26 +7,27 @@ import { MatInputModule } from '@angular/material/input';
 import { MODE } from '../../constant/Mode';
 
 @Component({
-    selector: 'app-ui-input',
-    imports: [
-        CommonModule,
-        MatFormField,
-        MatLabel,
-        MatHint,
-        MatIcon,
-        MatInputModule,
-        FormsModule,
-        ReactiveFormsModule,
-    ],
-    templateUrl: './ui-input.component.html',
-    styleUrl: './ui-input.component.scss',
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => UiInputComponent),
-            multi: true,
-        }
-    ]
+  selector: 'app-ui-input',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatFormField,
+    MatLabel,
+    MatHint,
+    MatIcon,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  templateUrl: './ui-input.component.html',
+  styleUrl: './ui-input.component.scss',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => UiInputComponent),
+      multi: true,
+    }
+  ]
 })
 export class UiInputComponent implements ControlValueAccessor {
   @Input() lbl!: string;

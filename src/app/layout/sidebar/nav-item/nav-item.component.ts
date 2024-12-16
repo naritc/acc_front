@@ -21,17 +21,21 @@ import { CommonModule } from '@angular/common';
 import { BreadcrumbService } from '../../../service/breadcrumb.service';
 
 @Component({
-    selector: 'app-nav-item',
-    imports: [MaterialModule, CommonModule],
-    templateUrl: './nav-item.component.html',
-    styleUrls: [],
-    animations: [
-        trigger('indicatorRotate', [
-            state('collapsed', style({ transform: 'rotate(0deg)' })),
-            state('expanded', style({ transform: 'rotate(180deg)' })),
-            transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4,0.0,0.2,1)')),
-        ]),
-    ]
+  selector: 'app-nav-item',
+  standalone: true,
+  imports: [MaterialModule, CommonModule],
+  templateUrl: './nav-item.component.html',
+  styleUrls: [],
+  animations: [
+    trigger('indicatorRotate', [
+      state('collapsed', style({ transform: 'rotate(0deg)' })),
+      state('expanded', style({ transform: 'rotate(180deg)' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4,0.0,0.2,1)')
+      ),
+    ]),
+  ],
 })
 export class AppNavItemComponent implements OnChanges {
   @Output() toggleMobileLink: unknown = new EventEmitter<void>();
