@@ -38,8 +38,8 @@
     "@angular/compiler-cli": "^19.0.4",
     "@angular/localize": "^19.0.4",
     "@types/jasmine": "^5.1.4",
-    "angular-eslint": "18.1.0",
-    "eslint": "^9.13.0",
+    "angular-eslint": "19.0.2",
+    "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "jasmine-core": "^5.1.2",
@@ -51,6 +51,6 @@
     "prettier": "^3.3.3",
     "prettier-eslint": "^16.3.0",
     "typescript": "~5.5.2",
-    "typescript-eslint": "8.0.0-alpha.38"
+    "typescript-eslint": "^8.0.0"
   }
 }
