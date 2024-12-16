@@ -1,0 +1,53 @@
+<form [formGroup]="tableGroup">
+  <mat-card>
+    <mat-card-header>
+      <div class="col-md-8">
+        <ng-content></ng-content>
+      </div>
+      <div class="col-md-4">
+        <app-ui-input
+          lbl="Filter :"
+          formControlName="filterTable"
+          (keyup)="applyFilter($event)"
+          (focusout)="applyFilter($event)"
+          placeholder="Filter"></app-ui-input>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <table mat-table #table [dataSource]="datasource" matSort class="table-responsive">
+        <ng-container
+          *ngFor="let column of columns"
+          [matColumnDef]="column.def">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.title }}</th>
+          <td mat-cell *matCellDef="let element">
+            <span *ngIf="column.type === COLUMN_TYPE.TEXT">{{
+              element[column.def]
+            }}</span>
+            <span *ngIf="column.type === COLUMN_TYPE.NUMBER">{{
+              element[column.def]
+            }}</span>
+            <span *ngIf="column.type === COLUMN_TYPE.DATE">{{
+              element[column.def] | date: 'dd-MM-yyyy'
+            }}</span>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayColumns" (click)="onRowClicked(row)" class="cursor-pointer"></tr>
+      </table>
+
+      <mat-paginator
+        #paginator
+        [length]="datasource.length"
+        [pageSize]="page.pageSize"
+        [pageSizeOptions]="
+          page.pageOption ? page.pageOption : [10, 50, 100, 1000]
+        "
+        [pageIndex]="page.pageIndex"
+        aria-label="Select page">
+        ></mat-paginator
+      >
+    </mat-card-content>
+  </mat-card>
+</form>

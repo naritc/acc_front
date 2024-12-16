@@ -1,0 +1,10 @@
+<mat-expansion-panel (opened)="panelOpenState.set(true)" [expanded]="true" style="margin-bottom: 10px;">
+  <mat-expansion-panel-header>
+    <mat-panel-title> <h6>{{ title }}</h6> </mat-panel-title>
+    <mat-panel-description>
+      {{ description }}
+      <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <ng-content></ng-content>
+</mat-expansion-panel>

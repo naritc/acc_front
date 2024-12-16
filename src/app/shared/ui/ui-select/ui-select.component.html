@@ -1,0 +1,6 @@
+<mat-form-field class="mat-full-width" floatLabel="always">
+  <mat-label>{{ lbl }}</mat-label>
+  <mat-select [formControl]="selectEle" multiple>
+    <mat-option [value]="sel.value" *ngFor="let sel of selectList">{{ sel.title }}</mat-option>
+  </mat-select>
+</mat-form-field>

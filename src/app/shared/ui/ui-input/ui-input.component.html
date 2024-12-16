@@ -1,0 +1,19 @@
+<mat-form-field class="mat-full-width" floatLabel="always">
+  <mat-label>{{ lbl }}</mat-label>
+  <input
+    matInput
+    [formControl]="inputElem"
+    placeholder="Please Input {{ lbl }}"
+    [maxlength]="maxLength"
+    [readonly]="mode === 'view'" />
+  <mat-hint align="end">
+    {{ inputElem.getRawValue()?.length }} / {{ maxLength }}</mat-hint
+  >
+
+  <mat-icon
+    matSuffix
+    *ngIf="inputElem.getRawValue()"
+    (click)="inputElem.setValue('')"
+    >close</mat-icon
+  >
+</mat-form-field>
